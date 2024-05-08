@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 public class BrowserManager extends Utils {
     //String type data for browser
-    String browser = loadPage.getProperty("Browser");
+    String browser = loadProp.getProperty("Browser");
 
     // to open the browser
     public void openBrowser(){

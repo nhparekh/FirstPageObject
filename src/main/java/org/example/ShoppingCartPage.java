@@ -10,7 +10,7 @@ public class ShoppingCartPage extends Utils {
         //click on shopping cart button
         clickOnElement(By.className("ico-cart"));
         //
-        String expectedProductName =loadPage.getProperty("ExpectedProductName");
+        String expectedProductName =loadProp.getProperty("ExpectedProductName");
         //verify correct product show in cart
         String actualProductName = getTextFromElement(By.className("product-name"));
         Assert.assertEquals(actualProductName,expectedProductName,"Wrong Product");

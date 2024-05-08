@@ -2,7 +2,7 @@ package org.example;
 
 import org.testng.annotations.Test;
 
-public class TestSuit extends BaseTest{//extends class to call method open and close browser
+public class TestSuit {//extends class to call method open and close browser
 
     //create obj to call Homepage method
     HomePage homePage = new HomePage();
@@ -34,6 +34,17 @@ public class TestSuit extends BaseTest{//extends class to call method open and c
     //create obj for call checkShoppingCart
     ShoppingCartPage shoppingCartPage = new ShoppingCartPage();
 
+    DesktopPage desktopPage = new DesktopPage();
+
+    ComputerPage computerPage = new ComputerPage();
+
+    //create obj to call Facebook page
+    FacebookPage facebookPage = new FacebookPage();
+    //create obj to call Nikepage
+    NikePage nikePage = new NikePage();
+    //create obj to call Newsrelease
+    NewsRelease newsRelease = new NewsRelease();
+
 
 
     @Test
@@ -45,9 +56,7 @@ public class TestSuit extends BaseTest{//extends class to call method open and c
         registerPage.enterRegistrationDetails();
         //to verify user registered Successfully
         registerResultPage.userShouldBeAbleToGetRegistrationMsg();
-
     }
-
     @Test
     public void verifyRegisteredUserShouldBeAbleToLogIn(){
 
@@ -61,9 +70,7 @@ public class TestSuit extends BaseTest{//extends class to call method open and c
         homePage.clickOnLoginButton();
         //to enter login detail and submit Login button
         loginPage.loginDetails();
-
     }
-
     @Test
     public void verifyRegisteredUserShouldBeAbleReferAProductToFriendByEmail(){
 
@@ -87,10 +94,7 @@ public class TestSuit extends BaseTest{//extends class to call method open and c
        leicaT_mirrorlessDigital_cameraPage.referAFriend();
        //to refer a product to friend
         productEmailAFriend.enterFriendDetails();
-
-
     }
-
     @Test
 
     public void userShouldBeAbleToConformCorrectProductAddedInACart(){
@@ -105,6 +109,82 @@ public class TestSuit extends BaseTest{//extends class to call method open and c
         //verify correct product added
         shoppingCartPage.conformAddedProduct();
     }
+
+    @Test
+    public void verifyUserShouldAbleToSeeEachProductsShouldHaveATitle(){
+        //click on computer button
+        homePage.clickOnComputer();
+        //click on desktops
+        computerPage.clickOnDesktops();
+        //verify each Products Should Have A Title
+        desktopPage.eachProductsShouldHaveATitle();
+    }
+
+    @Test
+    public void verifyUserShouldAbleToSeeEachProductsShouldHaveAAddToCartButton(){
+        //click on electronics button
+        homePage.clickOnElectronics();
+        //click on camera and photo
+        electronics.clickOnCameraAndPhoto();
+        //to click on camera and photo
+            cameraAndPhoto.EachProductHaveAddToCartButton();
+
+    }
+
+    @Test
+    public void verifyUserShouldAbleToSeePopupAlertMsgWhenClickOnVoteButtonOnHomePage_AndCompareText(){
+        //click on vote button
+        homePage.clickOnVote();
+        homePage.handleMsg();
+
+    }
+    @Test
+    public void verifyUserShouldAbleToSeeAlertTextWhenClickOnSearchButtonOnHomePageAndAlsoAcceptTheAlert(){
+        //click on search button
+        homePage.clickOnSearchButton();
+        homePage.getAlertMsg();
+
+    }
+
+    @Test
+    public void verifyUserShouldAbleToOpenFacebookPage(){
+        //click on Facebook icon
+        homePage.clickOnFacebookIcon();
+        //Verify url
+
+        //Accept cookies and close pop-up
+        facebookPage.OpenFacebookPage();
+        //close login pop-up
+        //verify/highlight nopcommerce logo
+    }
+    @Test
+    public void verifyAllProductContainSpecificWord(){
+        //Enter product name
+        homePage.searchByBrandName();
+        //to click on search
+        homePage.clickOnSearchButton();
+        //each product contain
+        nikePage.ProductsContainActualWordInTitle();
+    }
+    @Test
+    public void verifyClickOnDetailsAndCommentInnopCommercenewrelease() {
+//click on Details button
+        homePage.clickOnDetailsButton();
+//verify new comment is added at last position
+        newsRelease.addNewComment();
+    }
+    @Test
+    public void verifyAllProductContainChooseCurrencySymbol(){
+        // open browser
+        //Type Url
+        //Select euro
+        homePage.chooseEuroCurrency();
+//Select US Dollar
+        homePage.chooseUSDollarCurrency();
+    }
+
+
+
 }
 
 

@@ -7,10 +7,10 @@ public class RegisterPage extends Utils {
     public void enterRegistrationDetails() {
 
         //type firstname
-        typeText(By.id("FirstName"),loadPage.getProperty("Firstname"));
+        typeText(By.id("FirstName"),loadProp.getProperty("FirstName"));
 
         //type lastname
-        typeText(By.id("LastName"),loadPage.getProperty("Lastname"));
+        typeText(By.id("LastName"),loadProp.getProperty("LastName"));
 
         //select date of birth
         selectTextByVisibleText(By.name("DateOfBirthDay"),"3");
@@ -33,9 +33,6 @@ public class RegisterPage extends Utils {
         //click on submit regist button
         clickOnElement(By.name("register-button"));
 
-
-
     }
-
 
     }

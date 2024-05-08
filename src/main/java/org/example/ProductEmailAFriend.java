@@ -8,7 +8,7 @@ public class ProductEmailAFriend extends Utils{
         //clickOnElement(By.xpath("//button[normalize-space()='Email a friend']"));
 
         //enter friends emailid
-        typeText(By.xpath("//input[@id='FriendEmail']"),loadPage.getProperty("FriendEmailId"));
+        typeText(By.xpath("//input[@id='FriendEmail']"),loadProp.getProperty("FriendEmailId"));
 
         //enter my email id
         typeText(By.xpath("//input[@name='YourEmailAddress']"),"np"+randomDate()+"@gmail.com");
